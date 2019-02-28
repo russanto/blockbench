@@ -9,8 +9,8 @@ sleep 3
 i=0
 for host in `cat $HOSTS`; do
   if [[ $i -lt $1 ]]; then
-    ssh -oStrictHostKeyChecking=no dinhtta@$host $ETH_HOME/start-mining.sh
-    echo done node $host
+    ssh -oStrictHostKeyChecking=no root@$host $ETH_HOME/start-mining.sh
+    echo [START-ALL] done node $host
   fi
   let i=$i+1
 done

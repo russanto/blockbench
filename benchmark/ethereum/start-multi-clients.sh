@@ -9,7 +9,7 @@ for client in `cat $CLIENTS`; do
   if [[ $i -lt $IDX ]]; then
     echo $client index $i
 #  ssh -oStrictHostKeyChecking=no $client 'cd /users/dinhtta/blockchain-perf/ethereum ; ./start-clients.sh '$3 $i $2
-    ssh -oStrictHostKeyChecking=no $client $ETH_HOME/start-clients.sh $3 $i $2 $4
+    ssh -oStrictHostKeyChecking=no root@$client $ETH_HOME/start-clients.sh $3 $i $2 $4
   fi
   let i=$i+1
 done
@@ -22,7 +22,7 @@ if [[ $5 == "-drop" ]]; then
   let i=0
   for server in `cat $HOSTS`; do
     if [[ $i -ge $idx ]]; then
-      ssh -oStrictHostKeyChecking=no $server killall -KILL geth peer java 
+      ssh -oStrictHostKeyChecking=no root@$server killall -KILL geth peer java 
       echo "Dropped "$server
     fi
     let i=$i+1
@@ -30,7 +30,7 @@ if [[ $5 == "-drop" ]]; then
   sleep $SR
   for client in `cat $CLIENTS`; do
     echo $client index $i
-    ssh -oStrictHostKeyChecking=no $client 'killall -KILL driver' 
+    ssh -oStrictHostKeyChecking=no root@$client 'killall -KILL driver' 
     let i=$i+1
   done
 else
@@ -38,7 +38,7 @@ else
   sleep $M
   for client in `cat $CLIENTS`; do
     echo $client index $i
-    ssh -oStrictHostKeyChecking=no $client 'killall -KILL driver' 
+    ssh -oStrictHostKeyChecking=no root@$client 'killall -KILL driver' 
     let i=$i+1
   done
 fi
