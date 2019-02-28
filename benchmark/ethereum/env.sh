@@ -3,8 +3,8 @@ HOSTS=$ETH_HOME/hosts
 CLIENTS=$ETH_HOME/clients
 ETH_DATA=/root/.ethereum
 LOG_DIR=/root/logs
-EXE_HOME=$ETH_HOME/../../src/macro/smallbank
-BENCHMARK=smallbank
+EXE_HOME=$ETH_HOME/../../src/macro/kvstore
+BENCHMARK=ycsb
 
 ##comment these out for smallbank
 #EXE_HOME=$ETH_HOME/../../src/smallbank/ethereum/ycsb
