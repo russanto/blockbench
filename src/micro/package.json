@@ -20,7 +20,7 @@
     "devDependencies": {},
     "dependencies": {
         "bignumber.js": "git+https://github.com/frozeman/bignumber.js-nolookahead.git",
-        "web3": "git+https://github.com/ethereum/web3.js.git",
+        "web3": "git+https://github.com/ethereum/web3.js.git#v0.20.6",
         "zipfian": "git+https://github.com/willscott/zipfian.git"
     }
 }
