@@ -1,6 +1,6 @@
 #!/bin/bash
 GETH="geth"
-ETH_DATA=`dirname ${BASH_SOURCE-$0}`/../data
+ETH_DATA=/root/.ethereum
 cd `dirname ${BASH_SOURCE-$0}`
 pwd 
 
@@ -22,4 +22,4 @@ echo "Starting geth with $NM miner threads"
 # geth 1.8.15 uses --miner.threads
 
 $GETH --datadir=$ETH_DATA init genesis.json
-$GETH --datadir=$ETH_DATA --nodiscover --rpcapi="db,eth,net,web3,personal,web3" --rpc --rpcaddr "localhost" --rpcport "8545" --rpccorsdomain "*" --gasprice 0 --maxpeers 32 --networkid 9119 --unlock "0x12f029d57082315085bfb4d4d8345c92c5cdd881" --password <(echo -n "") --mine --minerthreads $NM > /dev/null 2>&1 &
+$GETH --datadir=$ETH_DATA --nodiscover --rpcapi="db,eth,net,web3,personal,web3" --rpc --rpcaddr "localhost" --rpcport "8545" --rpccorsdomain "*" --gasprice 0 --maxpeers 32 --networkid 9119 --unlock "0x12f029d57082315085bfb4d4d8345c92c5cdd881" --password <(echo -n "") --mine --minerthreads $NM > /root/eth_logs 2>&1 &

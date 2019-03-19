@@ -1,9 +1,9 @@
-ETH_HOME=/users/dinhtta/anh/blockchain-perf/benchmark/ethereum
+ETH_HOME=/root/blockbench/benchmark/ethereum
 HOSTS=$ETH_HOME/hosts
 CLIENTS=$ETH_HOME/clients
-ETH_DATA=/data/dinhtta/eth
-LOG_DIR=$ETH_HOME/donothing_donothingresults_1
-EXE_HOME=/users/dinhtta/anh/wangji_3/blockchain-perf/src/donothing
+ETH_DATA=/root/.ethereum
+LOG_DIR=/root/logs
+EXE_HOME=$ETH_HOME/../../src/macro/kvstore
 BENCHMARK=ycsb
 
 ##comment these out for smallbank

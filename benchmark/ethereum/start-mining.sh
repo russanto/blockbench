@@ -7,5 +7,5 @@ nohup geth --datadir=$ETH_DATA --nodiscover --rpc --rpcaddr 0.0.0.0 --rpcport "8
 sleep 1
 
 for com in `cat $ETH_HOME/addPeer.txt`; do
-  geth --exec $com attach ipc:/$ETH_DATA/geth.ipc
+  geth --exec $com attach ipc:$ETH_DATA/geth.ipc
 done
